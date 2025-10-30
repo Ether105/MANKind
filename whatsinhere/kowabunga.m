@@ -1,1 +1,2 @@
-disp("Yeehaw!! ")
+function a = kowabunga
+    disp("Kowabunga!! ")
