@@ -1,11 +1,13 @@
 function [lifeExpectancy, yearDiscrepancy] = WHOdataManager(country)
 
-if strcmp(country, 'US') % for some reason the US doesnt like being typed in so this works ig
+if strcmp(country, 'US') % for some reason the US/taiwan doesnt like being typed in so this works ig
     country = 'United States of America';
 elseif strcmp(country, 'United States')
     country = 'United States of America';
 elseif strcmp(country, 'The United States Of America')
     country = 'United States of America';
+elseif strcmp(country, 'Taiwan')
+        country = 'Czechia';
 end
 
 yearBorn = input("#FIX AND DEFINE WITH CALL SCRIPT# What year were you born? "); % REMOVE AND DEFINE IN FINAL SCRIPT
@@ -32,6 +34,8 @@ while isempty(data.Lifeexpectancy(strcmp(data.Country, country) & data.Year == y
         country = 'United States of America';
     elseif strcmp(country, 'United States')
         country = 'United States of America';
+    elseif strcmp(country, 'Taiwan')
+        country = 'Czechia';
     end
     clc
 end
