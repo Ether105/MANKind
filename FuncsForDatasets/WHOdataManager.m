@@ -43,4 +43,3 @@ end
 lifeExpectancy = data.Lifeexpectancy(strcmp(data.Country, country) & data.Year == yearBorn);
 
 end
-
