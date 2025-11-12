@@ -1,4 +1,4 @@
-function [lifeExpectancy, yearDiscrepancy] = WHOdataManager(country)
+function [lifeExpectancy, yearDiscrepancy] = WHOdataManager(country, age)
 
 if strcmp(country, 'US') % for some reason the US/taiwan doesnt like being typed in so this works ig
     country = 'United States of America';
@@ -10,7 +10,7 @@ elseif strcmp(country, 'Taiwan')
         country = 'Czechia';
 end
 
-yearBorn = input("#FIX AND DEFINE WITH CALL SCRIPT# What year were you born? "); % REMOVE AND DEFINE IN FINAL SCRIPT
+yearBorn = age;
 
 yearDiscrepancy = 0;
 if yearBorn < 2000 % This is here because data is only for 2000-2015
