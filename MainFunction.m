@@ -10,9 +10,9 @@ height=(heightft*12)+heightin; %calculates the users height only in inches
 weight=input('Please enter your weight (lbs): \n');
 
 %% Calling functions
-livelongermatrix=LiveLongerFunc(age,bmi); %should store outputs of the func
+bmiscore=BMI(height,weight);
+livelongermatrix=LiveLongerFunc(age,bmiscore); %should store outputs of the func
 whodatamanagerscore=WHOdataManager(country,age); %should store outputs of the func
-bmiscore=BMI(weight,height);
 
 %% Compiling scores (?)
 yearsgainedlost=livelongermatrix(:,2);
