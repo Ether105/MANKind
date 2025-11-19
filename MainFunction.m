@@ -8,7 +8,7 @@ height=(heightft*12)+heightin; %calculates the users height only in inches
 weight=input('Please enter your weight (lbs): \n');
 
 %% Calling functions
-livelongerscore=LiveLongerFunc(age); %should store outputs of the func
+livelongerscore=LiveLongerFunc(age,bmi); %should store outputs of the func
 whodatamanagerscore=WHOdataManager(country,age); %should store outputs of the func
 bmiscore=BMI(weight,height);
 
