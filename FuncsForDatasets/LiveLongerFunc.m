@@ -45,6 +45,8 @@ clc;
 
 if Q3 > 8
     lifeMatx(3,:) = {DATA{3,1}, DATA{3,2}, DATA{3,3}};
+elseif Q3 < 5 
+    lifeMatx(3,:) = {"Sleep", -5, "Sleeping less than 6 hours a night is linked to cardiovascular events that can signifigantly reduce your lifespan. "};
 else
     lifeMatx(3,:) = {"Sleep", 0, ""};
 end
