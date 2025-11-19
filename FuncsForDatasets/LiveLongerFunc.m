@@ -2,7 +2,7 @@
 age = 11;
 
 DATA = readtable("DataSets\LiveLongerData.csv",VariableNamingRule="preserve"); %pull data
-DATA = DATA(:,[1:2 8]);                                         
+DATA = DATA(:,[1:2 8]);                         % snip unnecessary parts from data                 
 
 Q1 = input('How many days a month do you smoke? (Enter 1 if you don''t currently but you''ve had the habit before) ');
 clc;
@@ -10,7 +10,7 @@ Q2 = input('On average, how many hours per day do you spend sitting down? ');
 clc;
 Q3 = input('How many hours of sleep (on average) do you get a night? ');
 clc;
-Q4 =   % input('Are you overweight? ');
+Q4 = bmi; % input('Are you overweight? ');
 clc;
 Q5 = input('How many drinks of alcohol do you have per week? ');
 clc;
