@@ -18,26 +18,19 @@ clc;
 country=input('Please enter the country you have lived in the most (e.g. United States): \n','s'); 
 clc;
 %% Calling functions
-bmiscore=BMI(height,weight);
-livelongermatrix=LiveLongerFunc(age,bmiscore); %should store outputs of the func
-whodatamanagerscore=WHOdataManager(country,age); %should store outputs of the func
+bmiscore = BMI(height,weight);
+livelongermatrix = LiveLongerFunc(age,bmiscore); %should store outputs of the func
+estimatedAvgLife = WHOdataManager(country,age); %should store outputs of the func
 
 %% Compiling scores (?)
 yearsgainedlost=sum(livelongermatrix(:,2));
 yearsgainedlost=yearsgainedlost{:,:};
 notes=livelongermatrix{:,3};
-%notes=livelongermatrix(:,3);
-%nonEmptyCells = notes(~cellfun(@isempty, notes));
-%sentence = strjoin(nonEmptyCells, ' '); % Joins with a space as delimiter
-%      disp(sentence);
 
 nonEmptyStrings = notes(notes ~= ""); 
 nonEmptyStrings(:,1) = eraseBetween(nonEmptyStrings(:,1),1,1);
-%nonEmptyStrings = notes(~ismissing(notes)); 
+
 sentenceMatrix = string(nonEmptyStrings);
-%fprintf('Notes about your lifestyles: \n',sentenceMatrix);
-%fprintf('Notes about your lifestyles: \n''%s''\n',sentenceMatrix);
+
 fprintf('\nNotes about your lifestyles: \n''%s',sentenceMatrix);
-fprintf('\n \nYears that you gained/lost: \n %d\n', yearsgainedlost);
-%fprintf('Years that you gained/lost: \n', yearsgainedlost);
-%livelongermatrix=livelongermatrix{:,:}
+fprintf('\n \nYears that you gained/lost: \n %.1f\n', yearsgainedlost);
