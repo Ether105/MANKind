@@ -100,10 +100,10 @@ end
 Q7 = input('How many hours per week do you get moderate exercise? ');
 clc;
 
-if Q7 >= 2
-    lifeMatx(7,:) = {DATA{7,1}, DATA{7,2}, DATA{7,3}};
-else
-    lifeMatx(7,:) = {"Exercise", 0, ""};
+if Q7 >= 2 && Q7 < 5
+    lifeMatx(7,:) = {DATA{21,1}, 2, DATA{21,3}};
+elseif Q7 >= 5 
+    lifeMatx(7,:) = {DATA{21,1}, 4, DATA{21,3}};
 end
 
 
