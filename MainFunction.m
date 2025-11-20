@@ -24,3 +24,7 @@ whodatamanagerscore=WHOdataManager(country,age); %should store outputs of the fu
 
 %% Compiling scores (?)
 yearsgainedlost=sum(livelongermatrix(:,2));
+notes=livelongermatrix(:,3);
+nonEmptyCells = notes(~cellfun(@isempty, notes));
+sentence = strjoin(nonEmptyCells, ' '); % Joins with a space as delimiter
+      disp(sentence);
