@@ -32,6 +32,7 @@ notes=livelongermatrix{:,3};
 %      disp(sentence);
 
 nonEmptyStrings = notes(notes ~= ""); 
+nonEmptyStrings(:,1) = eraseBetween(nonEmptyStrings(:,1),1,1);
 %nonEmptyStrings = notes(~ismissing(notes)); 
 sentenceMatrix = string(nonEmptyStrings);
 %fprintf('Notes about your lifestyles: \n',sentenceMatrix);
