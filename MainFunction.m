@@ -3,7 +3,7 @@ clc;
 clear;
 age=input('Please enter your age: \n');
 clc;
-yearborn=input('Please enter the year in which you were born: \n');
+yearborn = currentYear - age;
 clc;
 
 heightft=input('Please enter your height in ft (ex: 6, not 6''3): \n');
@@ -28,9 +28,10 @@ yearsgainedlost=yearsgainedlost{:,:};
 notes=livelongermatrix{:,3};
 
 nonEmptyStrings = notes(notes ~= ""); 
-nonEmptyStrings(:,1) = eraseBetween(nonEmptyStrings(:,1),1,1);
 
 sentenceMatrix = string(nonEmptyStrings);
 
-fprintf('\nNotes about your lifestyles: \n''%s',sentenceMatrix);
-fprintf('\n \nYears that you gained/lost: \n %.1f\n', yearsgainedlost);
+fprintf('Notes about your lifestyles: \n\n');
+disp(sentenceMatrix)
+fprintf('n \nYears that you gained/lost from the avg: \n\n %.0f\n', yearsgainedlost);
+input('')
