@@ -9,7 +9,7 @@ elseif age < 45 && age >= 29
 elseif age < 61 && age >= 45
     age = 3; % assigns gen x to 3
 else
-    age = [];
+    age = 3;
 end
 
 Participant = 1:10;
@@ -75,11 +75,11 @@ b(1).FaceColor = [0 0 1];
 b(2).FaceColor = [0.8 0 0];  
 
 legend({'Average for Generation', 'User Value'}, ...
-       'Location', 'northwest')
+       'Location', 'northeast')
 
 title('Average Lifespan Impact vs User Impact')
 xlabel('Generation')
-ylabel('Years')
+ylabel('Years Gained')
 
 
 

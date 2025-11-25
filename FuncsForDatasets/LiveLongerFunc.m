@@ -112,4 +112,13 @@ end
 if Q7 >= 2 && Q1 == 0 && Q4 < 29
     lifeMatx(8,:) = {DATA{14,1}, 8, DATA{14,3}};
 end
+
+Q8 = input('If I got hurt today I would go to the ER. (true/false) ');
+if Q8 == true
+    lifeMatx(9,:) = {'Access to Healthcare', 14,'Having access to modern healthcare substantially increases your lifespan. '};
+elseif Q8 == false
+    lifeMatx(9,:) = {'Access to Healthcare', 0,'Not having access to modern healthcare (whether because of geography or financial sit.) substantially decreases your lifespan. '};
+end
+
+
 end

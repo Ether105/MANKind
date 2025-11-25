@@ -37,3 +37,5 @@ fprintf('\nYears that you gained/lost from the avg: \n\n %.0f\n', yearsgainedlos
 input('Press enter to plot. ')
 plotting(yearsgainedlost,age)
 
+lifeScore = estimatedAvgLife + yearsgainedlost;
+time = (yearborn + lifeScore) - currentYear;
