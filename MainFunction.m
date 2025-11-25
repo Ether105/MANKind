@@ -23,15 +23,17 @@ livelongermatrix = LiveLongerFunc(age,bmiscore); %should store outputs of the fu
 estimatedAvgLife = WHOdataManager(country,age); %should store outputs of the func
 
 %% Compiling scores (?)
-yearsgainedlost=sum(livelongermatrix(:,2));
-yearsgainedlost=yearsgainedlost{:,:};
+yearsgainedlost = sum(livelongermatrix(:,2));
+yearsgainedlost = yearsgainedlost{:,:};
 notes=livelongermatrix{:,3};
 
 nonEmptyStrings = notes(notes ~= ""); 
 
 sentenceMatrix = string(nonEmptyStrings);
 
-fprintf('Notes about your lifestyles: \n\n');
+fprintf('Notes about your lifestyles: \n');
 disp(sentenceMatrix)
 fprintf('n \nYears that you gained/lost from the avg: \n\n %.0f\n', yearsgainedlost);
-input('')
+input('Press enter to plot. ')
+plotting(yearsgainedlost,age)
+
