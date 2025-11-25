@@ -33,7 +33,7 @@ sentenceMatrix = string(nonEmptyStrings);
 
 fprintf('Notes about your lifestyles: \n');
 disp(sentenceMatrix)
-fprintf('n \nYears that you gained/lost from the avg: \n\n %.0f\n', yearsgainedlost);
+fprintf('\nYears that you gained/lost from the avg: \n\n %.0f\n', yearsgainedlost);
 input('Press enter to plot. ')
 plotting(yearsgainedlost,age)
 
