@@ -1,4 +1,4 @@
-function k = plotting(deltaYears,age)
+function plotting(deltaYears,age)
 
 if age < 13
     age = 0; % assigns gen alpha to 0
@@ -14,39 +14,42 @@ end
 
 Participant = 1:10;
 
+%% Data from sampled populations:
 GenAlpha_Yearsgainedorlost = [8 18 21 10 10 11 1 8 20 23 ];
 GenZ_Yearsgainedorlost = [11 -12 23 2 18 23 -14 -17 -18 6];
 Millennial_Yearsgainedorlost = [-2 -2 15 10 -10 0 18 -5 -2 16];
 GenX_Yearsgainedorlost = [-9 -10 -8 -2 3 10 6 5 4 -8];
+%%
 
 figure(1)
 tiledlayout 
 nexttile 
-bar(Participant, GenAlpha_Yearsgainedorlost, 'r')
+bar(Participant, GenAlpha_Yearsgainedorlost, 'r') % Graphing gen A
 title('Years gained or lost in Gen Alpha')
 xlabel('Participant')
 ylabel('Years gained or lost')
 
 nexttile
-bar(Participant, GenZ_Yearsgainedorlost, 'b')
+bar(Participant, GenZ_Yearsgainedorlost, 'b') % Graphing gen Z
 title('Years gained or lost in Gen Z')
 xlabel('Participant')
 ylabel('Years gained or lost')
 
 nexttile
-bar(Participant, Millennial_Yearsgainedorlost, 'm')
+bar(Participant, Millennial_Yearsgainedorlost, 'm') % Graphing gen y 
 title('Years gained or lost in Millennials')
 xlabel('Participant')
 ylabel('Years gained or lost')
 
 nexttile
-bar(Participant, GenX_Yearsgainedorlost, 'g')
+bar(Participant, GenX_Yearsgainedorlost, 'g') % graphing gen x 
 title('Years gained or lost in Gen X')
 xlabel('Participant')
 ylabel('Years gained or lost')
 
+%% Graphing all average improvements on general public and displaying users value over their generation
 figure(2)
-x = ["Gen Alpha", "GenZ", "Millennial", "GenX"];
+x = ["Gen Alpha", "GenZ", "Millennial", "GenX"]; 
 y = [mean(GenAlpha_Yearsgainedorlost), ...
      mean(GenZ_Yearsgainedorlost), ...
      mean(Millennial_Yearsgainedorlost), ...
@@ -80,7 +83,6 @@ legend({'Average for Generation', 'User Value'}, ...
 title('Average Lifespan Impact vs User Impact')
 xlabel('Generation')
 ylabel('Years Gained')
-
-
+%%
 
 end
