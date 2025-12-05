@@ -2,9 +2,9 @@ function lifeMatx = LiveLongerFunc(age, bmi)
 
 % Load dataset
 DATA = readtable("DataSets\LiveLongerData.csv", VariableNamingRule="preserve");
-DATA = DATA(:, [1:2 8]);   % Keep only 3 columns (factor | value | note)
+DATA = DATA(:, [1:2 8]);   % Keep only 3 columns: factor, value, note
 
-% Output table initialized
+% Output table created
 lifeMatx = table(strings(0,1), zeros(0,1), strings(0,1), 'VariableNames', {'Factor','Value','Note'});
 
 %% ------------------- Q1: SMOKING -------------------
@@ -81,8 +81,6 @@ end
 %% ------------------- Q6: MENTAL HEALTH -------------------
 Q6 = input('From 1–10 (1 being best 10 being worst), how would you rate your mental health? ');
 clc;
-
-% how to fix real people data: Q6 = abs(11-Q6)
 
 if Q6 > 10     % checks if its in bounds and adjusts # to work w formula
     Q6 = 10; 
