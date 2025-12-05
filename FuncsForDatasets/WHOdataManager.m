@@ -1,6 +1,6 @@
 function [lifeExpectancy, yearDiscrepancy] = WHOdataManager(country, age)
 
-if strcmp(country, 'US') % for some reason the US/taiwan doesnt like being typed in so this works ig
+if strcmp(country, 'US') % fixing the whiole 'taiwan isn't a country' thing and common spellings of the US 
     country = 'United States of America';
 elseif strcmp(country, 'United States')
     country = 'United States of America';
@@ -12,7 +12,6 @@ end
 
 yearBorn = age;
 
-yearDiscrepancy = 0;
 if yearBorn < 2000 % This is here because data is only for 2000-2015
     yearDiscrepancy = 2000 - yearBorn;
     yearBorn = 2000;  
@@ -40,6 +39,6 @@ while isempty(data.Lifeexpectancy(strcmp(data.Country, country) & data.Year == y
     clc
 end
 
-lifeExpectancy = data.Lifeexpectancy(strcmp(data.Country, country) & data.Year == yearBorn);
+lifeExpectancy = data.Lifeexpectancy(strcmp(data.Country, country) & data.Year == yearBorn);  
 
 end
